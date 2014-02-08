@@ -1,0 +1,13 @@
+span {
+  font-family: Verdana, Arial, Sans Serif;
+  font-size: 62.5%; /* 10px */
+}
+
+span.contributor, span.volume {
+	font-weight: bold;
+}
+
+span.journal {
+	font-style: italic;
+}
+
