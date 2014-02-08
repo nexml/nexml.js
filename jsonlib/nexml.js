@@ -2,7 +2,7 @@ var NeXML = {};
 (function() {
     var prefix;
     if ( typeof NeXMLAttributePrefix === 'undefined' ) {
-	prefix = '@';
+		prefix = '@';
     }
     else {
         prefix = NeXMLAttributePrefix;
@@ -18,7 +18,23 @@ var NeXML = {};
         },
         getMeta : function () {
             return this.meta;
-        }
+        },
+        getMetaObject : function (predicate) {
+        	for ( var i = 0; i < this.meta.length; i++ ) {
+        		if ( this.meta.getProperty() == predicate ) {
+        			return this.meta.getContent();
+        		}
+        	}
+        },
+        getMetaObjectArray : function (predicate) {
+        	var result = new Array();
+        	for ( var i = 0; i < this.meta.length; i++ ) {
+        		if ( this.meta[i].getProperty() == predicate ) {
+        			result.push( this.meta[i].getContent() ); 
+        		}
+        	}
+        	return result;
+        }        
     };
     var Labeled = {
         getLabel : function () {
@@ -165,6 +181,16 @@ var NeXML = {};
         },
         getEdgeList : function () {
             return this.edge;
+        },
+        getEdge : function(parent,child) {
+        	var childId = child.getId();
+        	var parentId = parent.getId();
+        	for ( var i = 0; i < this.edge.length; i++ ) {
+        		var theEdge = this.edge[i];
+        		if ( theEdge.getSourceId() == parentId && theEdge.getTargetId() == childId ) {
+        			return theEdge;
+        		}
+        	}
         },
         getChildNodes : function (node) {
             var nodeId = node.getId();
@@ -391,7 +417,7 @@ var NeXML = {};
     /*----------------------------------------------------------------*/   
     /* ROOT DOCUMENT CLASS */
     function Document(rootXml) {
-        var nexml = rootXml.nex$nexml;
+        var nexml = rootXml['nex:nexml'];
         copyFields(this, [nexml]);
         normalizeList(this, 'otus', OTUs);
         normalizeList(this, 'trees', Trees);
@@ -400,7 +426,23 @@ var NeXML = {};
     Document.prototype = {
         getMeta : function () {
             return this.meta;
-        },    
+        },
+        getMetaObject : function (predicate) {
+        	for ( var i = 0; i < this.meta.length; i++ ) {
+        		if ( this.meta[i].getProperty() == predicate ) {
+        			return this.meta[i].getContent();
+        		}
+        	}
+        },   
+        getMetaObjectArray : function (predicate) {
+        	var result = new Array();
+        	for ( var i = 0; i < this.meta.length; i++ ) {
+        		if ( this.meta[i].getProperty() == predicate ) {
+        			result.push( this.meta[i].getContent() ); 
+        		}
+        	}
+        	return result;
+        },        
         getVersion : function () {
             return this[prefix + 'version'];
         },
