@@ -1,7 +1,7 @@
 NeXML JavaScript libraries
 --------------------------
 The JavaScript libraries use the [badgerfish](http://badgerfish.ning.com/) mapping of (Ne)XML onto JSON. 
-The [nexml.js](blob/master/jsonlib/nexml.js) library wraps around such JSON objects and 
+The [nexml.js](jsonlib/nexml.js) library wraps around such JSON objects and 
 exposes them with getters (no setters, though you can poke around the JSON data structure anyway if 
 you must update it). Example usage is shown in `jsonlib/nexml-js.html`
 
