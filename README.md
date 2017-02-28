@@ -28,11 +28,11 @@ form of Object declarations whose properties serve as method names and values as
 object model is a bit different (being charitably, here) so this is the way in which the library 
 approximates the behaviour that programmers in more orthodox object-oriented languages might expect.
 
-The Object properties and values (i.e. the methods) are attached to chield instances in their 
-constructors by copying over the properties and values of superclasses using the `copyFields` function 
-call. Because child instance might be data structures that holds different types (i.e. Array, Object 
-or scalar) the function `normalizeList` is then called in order to invoke constructors for the data
-held by the focal object correctly. 
+The Object properties and values (i.e. the methods) are attached to child instances in their 
+constructors by copying over the properties and values of named superclasses using the `copyFields` 
+function call. Because this child instance might wrap data structures of different types (i.e. Array, 
+Object or scalar) the function `normalizeList` is then called in order to correctly invoke constructors 
+for these data.
 
 Example data files
 ==================
