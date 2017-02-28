@@ -36,22 +36,22 @@ held by the focal object correctly.
 
 Example data files
 ==================
-- [nexml-trees.js](/nexml/nexml.js/blob/master/jsonlib/nexml-trees.js) - is the equivalent of the file
-  [trees.xml](/nexml/nexml/blob/master/examples/trees.xml) in the 'core' repository of NeXML files. It
-  demonstrates tree and network structures.
-- [nexml-characters.js](/nexml/nexml.js/blob/master/jsonlib/nexml-characters.js) - is the equivalent of
-  the file [characters.xml](/nexml/nexml/blob/master/examples/characters.xml) in the 'core' repository
-  of NeXML files. It demonstrates character state matrices.
+- [nexml-trees.js](jsonlib/nexml-trees.js) - is the equivalent of the file
+  [trees.xml](https://github.com/nexml/nexml/blob/master/examples/trees.xml) in the 'core' repository 
+  of NeXML files. It demonstrates tree and network structures.
+- [nexml-characters.js](jsonlib/nexml-characters.js) - is the equivalent of
+  the file [characters.xml](https://github.com/nexml/nexml/blob/master/examples/characters.xml) in the 
+  'core' repository of NeXML files. It demonstrates character state matrices.
   
 Example browser demo
 ====================
-- [nexml-js.html](/nexml/nexml.js/blob/master/jsonlib/nexml-js.html) - an HTML file that shows how data
+- [nexml-js.html](jsonlib/nexml-js.html) - an HTML file that shows how data
   can be accessed and displayed in a browser.
-- [json2.js](/nexml/nexml.js/blob/master/jsonlib/json2.js) - a 3rd party JavaScript file (public domain)
+- [json2.js](jsonlib/json2.js) - a 3rd party JavaScript file (public domain)
   that the demo uses to serialize JSON to text with `JSON.stringify`.
-- [nexml2html.css](/nexml/nexml.js/blob/master/jsonlib/nexml2html.css) - a simple CSS stylesheet that
+- [nexml2html.css](jsonlib/nexml2html.css) - a simple CSS stylesheet that
   the demo needed to make it super pretty.
   
-There is also the file [nexml2html.js](/nexml/nexml.js/blob/master/jsonlib/nexml2html.js), which once
+There is also the file [nexml2html.js](jsonlib/nexml2html.js), which once
 upon a time featured in a browser demo. It's not used now as such but it shows how to access metadata
 annotations using CURIEs, which is a pretty useful feature.
